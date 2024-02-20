@@ -1,0 +1,160 @@
+:root {
+    --clr-primary-orange: hsl(31, 77%, 52%);
+    --clr-primary-cyan: hsl(184, 100%, 22%);
+    --clr-primary-dark-cyan: hsl(179, 100%, 13%);
+
+    --clr-neutral-white-transparent: hsla(0, 0%, 100%, 0.75);
+    --clr-neutral-gray-light: hsl(0, 0%, 95%);
+
+
+    --ff-body: "Lexend Deca",
+        sans-serif;
+    --ff-headline: "Big Shoulders Display",
+        sans-serif;
+}
+
+/* boilerplate */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+}
+
+html {
+    /* 15px */
+    font-size: 0.9375rem;
+    height: 100%;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: var(--ff-body);
+    color: var(--clr-neutral-white-transparent);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    margin-block-start: 1.5rem;
+}
+
+
+footer {
+    padding-block: 2rem;
+}
+
+
+h1 {
+    line-height: 1.2;
+}
+
+p {
+    line-height: 1.5;
+    padding-bottom: 2rem;
+}
+
+.container {
+    width: min(100% - 3rem, 90rem);
+    margin-inline: auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+
+/* 
+article{
+    max-width: 375px;
+} */
+.car__sedans,
+.car__luxury,
+.car__suvs {
+    padding: 3rem;
+}
+
+.car__sedans {
+    border-radius: 5px 5px 0 0;
+    background-color: var(--clr-primary-orange);
+}
+
+.car__sedans button {
+    color: var(--clr-primary-orange);
+}
+
+.car__suvs {
+    background-color: var(--clr-primary-cyan);
+}
+
+.car__suvs button {
+    color: var(--clr-primary-cyan);
+}
+
+.car__luxury {
+    background-color: var(--clr-primary-dark-cyan);
+    border-radius: 0 0 5px 5px;
+}
+
+.car__luxury button {
+    color: var(--clr-primary-dark-cyan);
+}
+
+.car__title {
+    font-size: 2.2rem;
+    color: var(--clr-neutral-gray-light);
+    font-family: var(--ff-headline);
+    text-transform: uppercase;
+    padding-block: 2rem;
+}
+
+button {
+    border: 2px solid var(--clr-neutral-gray-light);
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    background-color: var(--clr-neutral-gray-light);
+}
+
+button:hover {
+    background-color: transparent;
+    color: var(--clr-neutral-gray-light);
+    transition: 250ms ease-in-out;
+}
+
+@media (min-width: 800px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .car__luxury {
+        border-radius: 0 5px 5px 0;
+    }
+
+    .car__sedans {
+        border-radius: 5px 0 0 5px;
+    }
+
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: hsl(0, 0%, 53%);;
+}
+
+.attribution a {
+    color: hsl(0, 0%, 38%);
+}
